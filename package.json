@@ -1,0 +1,23 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "Programmatically generate a professional readme file",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrich-kray/readme-generator.git"
+  },
+  "author": "Ryan Kray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rrich-kray/readme-generator/issues"
+  },
+  "homepage": "https://github.com/rrich-kray/readme-generator#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "inquirer": "^8.2.0"
+  }
+}
