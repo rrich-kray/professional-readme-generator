@@ -32,7 +32,7 @@ const promptSections = () => {
         {
             type: 'input',
             name: 'tableOfContents',
-            message: 'Please enter a list of your table of contents',
+            message: 'Please enter a list of your table of contents, with each item separated by a comma',
             validate: userTableOfContents => {
                 if (userTableOfContents) {
                     return true;
@@ -70,7 +70,20 @@ const promptSections = () => {
         },
         {
             type: 'input',
-            name: 'table of contents',
+            name: 'usage',
+            message: 'Please enter usage instructions',
+            validate: userUsage => {
+                if (userUsage) {
+                    return true;
+                } else {
+                    console.log('Please provide usage instructions!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'contributing',
             message: 'Please enter a list of contributors to this project',
             validate: userContributors => {
                 if (userContributors) {
@@ -83,17 +96,30 @@ const promptSections = () => {
         },
         {
             type: 'input',
-            name: 'usage',
-            message: 'Please enter usage instructions',
-            validate: userUsage => {
-                if (userUsage) {
+            name: 'email',
+            message: 'Please enter an email address',
+            validate: userEmail => {
+                if (userEmail) {
                     return true;
                 } else {
-                    console.log('Please provide usage instructions!');
+                    console.log('Please provide your email address!');
                     return false;
                 }
             }
-        }
+        },
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Please enter a link to your GitHub',
+            validate: userGit => {
+                if (userGit) {
+                    return true;
+                } else {
+                    console.log('Please provide a link to your GitHub!');
+                    return false;
+                }
+            }
+        },
     ])
 }
 
@@ -105,5 +131,3 @@ promptSections()
     .then(fileContent => {
         return writeFile(fileContent)
     })
-
-// Here you can use the functions you create in page-template.js
