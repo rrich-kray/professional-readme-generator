@@ -110,9 +110,5 @@ const promptSections = () => {
 }
 
 promptSections()
-    .then(answers => {
-        console.log(answers.licenses)
-        console.log(answers)
-        return generatePage(answers)
-    })
+    .then(answers => generatePage(answers))
     .then(fileContent => writeFile(fileContent))
