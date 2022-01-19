@@ -16,8 +16,7 @@ This project uses the inquirer node package to generate a professional README fi
 [usage](#usage)
 [contributing](#contributing)
 [tests](#tests)
-[email](#email)
-[github](#github)
+[questions](#questions)
 
 ## License 
 
@@ -36,7 +35,7 @@ Simply answer the prompts provided, and the apploication will output a fully-for
 
 Feel free to fork the project and make your own improvements!
 
-## Testing
+## Tests
 
 N/A
 
