@@ -12,7 +12,8 @@ const promptSections = () => {
                 if (titleInput) {
                     return true;
                 } else {
-                    console.log('Please enter the title of your project!')
+                    console.log('Please enter the title of your project!');
+                    return false;
                 }
             }
         },
@@ -31,19 +32,6 @@ const promptSections = () => {
         },
         {
             type: 'input',
-            name: 'tableOfContents',
-            message: 'Please enter a list of your table of contents, with each item separated by a comma',
-            validate: userTableOfContents => {
-                if (userTableOfContents) {
-                    return true;
-                } else {
-                    console.log('Please provide input for your table of contents!');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
             name: 'installation',
             message: 'Please enter installation instructions',
             validate: userInstallation => {
@@ -56,17 +44,10 @@ const promptSections = () => {
             }
         },
         {
-            type: 'input',
-            name: 'license',
-            message: 'Please provide license information',
-            validate: userLicense => {
-                if (userLicense) {
-                    return true;
-                } else {
-                    console.log('Please provide license information!');
-                    return false;
-                }
-            }
+            type: 'checkbox',
+            name: 'licenses',
+            message: 'Please select licenses for this project',
+            choices: ['MIT', 'ISC', 'Mozilla'],
         },
         {
             type: 'input',
@@ -84,9 +65,22 @@ const promptSections = () => {
         {
             type: 'input',
             name: 'contributing',
-            message: 'Please enter a list of contributors to this project',
+            message: 'Please enter contribution guidelines for this project',
             validate: userContributors => {
                 if (userContributors) {
+                    return true;
+                } else {
+                    console.log('Please provide contribution guidelines!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'Please enter a list of contributors to this project',
+            validate: userTests => {
+                if (userTests) {
                     return true;
                 } else {
                     console.log('Please provide a list of contributors!');
@@ -124,10 +118,9 @@ const promptSections = () => {
 }
 
 promptSections()
-    .then(userInputContent => {
-        console.log(userInputContent)
-        return generatePage(userInputContent) 
+    .then(answers => {
+        console.log(answers.licenses)
+        console.log(answers)
+        return generatePage(answers)
     })
-    .then(fileContent => {
-        return writeFile(fileContent)
-    })
+    .then(fileContent => writeFile(fileContent))

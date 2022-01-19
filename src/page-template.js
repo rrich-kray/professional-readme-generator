@@ -1,19 +1,17 @@
-const generateTableOfContents = (userTableOfContents) => {
+const generateTableOfContents = answers => {
     let totalContent = ``;
-    for (let i = 0; i < userTableOfContents.split(',').length; i++) {
-        let content = `${i + 1}. ${userTableOfContents.split(',')[i].trim()}`;
-        totalContent += `\n${content}`
-    }
+    Object.keys(answers).map(answer => totalContent += `\n\t[${answer}](#${answer})`)
     return totalContent
 }
 
-const generateContributingList = (userContributingList) => {
+const generateLicenseBadges = licenses => {
     let totalContent = '';
-    for (let i = 0; i < userContributingList.split(',').length; i++) {
-        let content = `${userContributingList.split(',')[i].trim()}`;
-        totalContent += `\n* ${content}`;
-    }
-    return totalContent
+    licenses.map(license => {
+        if (license === 'MIT') totalContent += '\n\t[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+        if (license === 'ISC') totalContent += '\n\t[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)'
+        if (license === 'Mozilla') totalContent += '\n\t[![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)'
+    })
+    return totalContent;
 }
 
 const generatePage = userInput => {
@@ -27,15 +25,15 @@ const generatePage = userInput => {
 
     ## Table of Contents
     
-    ${generateTableOfContents(userInput.tableOfContents)}
+    ${generateTableOfContents(userInput)}
+
+    ## License 
+    
+    ${generateLicenseBadges(userInput.licenses)}
 
     ## Installation
 
     ${userInput.installation}
-
-    ## License 
-    
-    ${userInput.license}
 
     ## Usage 
     
@@ -43,7 +41,11 @@ const generatePage = userInput => {
 
     ## Contributing
 
-    ${generateContributingList(userInput.contributing)}
+    ${userInput.contributing}
+
+    ## Testing
+
+    ${userInput.tests}
 
     ## Questions
 
