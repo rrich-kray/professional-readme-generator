@@ -73,11 +73,11 @@ const promptSections = () => {
         {
             type: 'input',
             name: 'tests',
-            message: 'Please enter a list of contributors to this project',
+            message: 'Please provide testing instructions for this project',
             validate: userTests => {
                 if (userTests) return true;
                 else {
-                    console.log('Please provide a list of contributors!');
+                    console.log('Please provide testing instructions!');
                     return false;
                 }
             }

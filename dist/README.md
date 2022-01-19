@@ -1,13 +1,12 @@
 
     
-# frwqef
+# Professional README Generator
 
 ## Description
 
-frewqf
+This application will generate a professional README file!
 
 ## Table of Contents
-
 
 [title](#title)
 [description](#description)
@@ -19,6 +18,7 @@ frewqf
 [email](#email)
 [github](#github)
 
+
 ## License 
 
 
@@ -26,26 +26,26 @@ frewqf
 
 ## Installation
 
-cfdsawe
+Node.js and the Inquirer package required to run this application
 
 ## Usage 
 
-frewqf
+Simply answer the prompts, and the application will generate a README file using your answers
 
 ## Contributing
 
-frweqf
+N/A
 
 ## Testing
 
-fewqffe 
+N/A 
 
 ## Questions
 
 Feel free to shoot me any questions at the email below:
 
-fewq
+rrich.kray@gmail.com
 
 find my GitHub profile by following the link below:
 
-fewd
+fcedwf

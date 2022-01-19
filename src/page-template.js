@@ -1,6 +1,6 @@
 const generateTableOfContents = answers => {
     let totalContent = ``;
-    Object.keys(answers).map(answer => totalContent += `\n[${answer}](#${answer})`)
+    Object.keys(answers).map(answer => totalContent += `[${answer}](#${answer})\n`)
     return totalContent
 }
 
