@@ -9,9 +9,8 @@ const promptSections = () => {
             name: 'title',
             message: 'What is the title of your document?',
             validate: titleInput => {
-                if (titleInput) {
-                    return true;
-                } else {
+                if (titleInput) return true;
+                else {
                     console.log('Please enter the title of your project!');
                     return false;
                 }
@@ -22,9 +21,8 @@ const promptSections = () => {
             name: 'description',
             message: 'Please enter a description of your project (required)',
             validate: userDescription => {
-                if (userDescription) {
-                    return true;
-                } else {
+                if (userDescription) return true;
+                else {
                     console.log('Please describe your project!');
                     return false;
                 }
@@ -35,9 +33,8 @@ const promptSections = () => {
             name: 'installation',
             message: 'Please enter installation instructions',
             validate: userInstallation => {
-                if (userInstallation) {
-                    return true;
-                } else {
+                if (userInstallation) return true;
+                else {
                     console.log('Please provide installation instructions!');
                     return false;
                 }
@@ -54,9 +51,8 @@ const promptSections = () => {
             name: 'usage',
             message: 'Please enter usage instructions',
             validate: userUsage => {
-                if (userUsage) {
-                    return true;
-                } else {
+                if (userUsage) return true;
+                else {
                     console.log('Please provide usage instructions!');
                     return false;
                 }
@@ -67,9 +63,8 @@ const promptSections = () => {
             name: 'contributing',
             message: 'Please enter contribution guidelines for this project',
             validate: userContributors => {
-                if (userContributors) {
-                    return true;
-                } else {
+                if (userContributors) return true;
+                else {
                     console.log('Please provide contribution guidelines!');
                     return false;
                 }
@@ -80,9 +75,8 @@ const promptSections = () => {
             name: 'tests',
             message: 'Please enter a list of contributors to this project',
             validate: userTests => {
-                if (userTests) {
-                    return true;
-                } else {
+                if (userTests) return true;
+                else {
                     console.log('Please provide a list of contributors!');
                     return false;
                 }
@@ -93,9 +87,8 @@ const promptSections = () => {
             name: 'email',
             message: 'Please enter an email address',
             validate: userEmail => {
-                if (userEmail) {
-                    return true;
-                } else {
+                if (userEmail) return true;
+                else {
                     console.log('Please provide your email address!');
                     return false;
                 }
@@ -106,9 +99,8 @@ const promptSections = () => {
             name: 'github',
             message: 'Please enter a link to your GitHub',
             validate: userGit => {
-                if (userGit) {
-                    return true;
-                } else {
+                if (userGit) return true;
+                else {
                     console.log('Please provide a link to your GitHub!');
                     return false;
                 }
