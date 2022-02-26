@@ -53,6 +53,10 @@ ${userInput.usage}
 
 ${userInput.contributing}
 
+## Issues
+
+Feel free to reach out on slack regarding any issues encountered while testing this project.
+
 ## Testing
 
 ${userInput.tests} 
